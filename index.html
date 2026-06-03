@@ -118,6 +118,21 @@
   .close p{font-size:18px;color:var(--charcoal-soft);max-width:52ch;margin:22px auto 0;}
   .close .cta{margin-top:36px;}
 
+  /* operator credibility */
+  .operator{padding:84px 0;background:var(--paper-2);border-bottom:1px solid var(--line);}
+  .operator .row{display:grid;grid-template-columns:1.25fr 1fr;gap:50px;align-items:center;}
+  @media(max-width:840px){.operator .row{grid-template-columns:1fr;gap:30px;}}
+  .operator .kick{display:inline-block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--coral);margin-bottom:14px;}
+  .operator h2{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-.025em;line-height:1.1;}
+  .operator p{font-size:16.5px;color:var(--charcoal-soft);margin-top:18px;}
+  .operator .stat{background:var(--charcoal);color:#F4F2EE;border-radius:20px;padding:38px 34px;text-align:center;}
+  .operator .stat .big{font-size:clamp(38px,6vw,58px);font-weight:800;letter-spacing:-.03em;line-height:1.05;}
+  .operator .stat .big .arrow{color:var(--coral);}
+  .operator .stat .lbl{font-size:14.5px;color:#C9C4BB;margin-top:16px;line-height:1.55;}
+  .operator .byline{font-size:14px;color:var(--muted);margin-top:24px;}
+  .operator .byline b{color:var(--charcoal);font-weight:600;}
+  .operator .byline a{color:var(--coral);font-weight:600;text-decoration:none;}
+  .operator .byline a:hover{text-decoration:underline;}
   footer{background:var(--charcoal);color:#C9C4BB;padding:62px 0 40px;}
   .foot{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap;}
   footer .logo img{height:30px;}
@@ -161,6 +176,22 @@
     <div class="word"><b>small ball</b>, <span class="pos">noun</span> — a strategy for progressing toward a goal by small steps or by addressing small matters.</div>
     <div class="src">— Merriam-Webster</div>
     <div class="kick">Small steps beat big expensive changes — including with AI.</div>
+  </div>
+</section>
+
+<section class="operator" id="operator">
+  <div class="wrap row">
+    <div>
+      <div class="kick">Who's behind it</div>
+      <h2>Most AI consultants have read about business. I've run one.</h2>
+      <p>I spent the last seven years helping take a business from about $1 million to roughly $50 million — not on one big swing, but by attacking process, friction, and the small inefficiencies that quietly bleed a company. That's the discipline behind Smallball, now with AI doing the repetitive work.</p>
+      <p>Most people selling AI have never made payroll or fixed a broken workflow with real money on the line. I have. That's the difference between advice and judgment — and it's why I start you with small, provable wins instead of selling you a transformation.</p>
+      <p class="byline"><b>Mark Meece</b>, founder of Smallball &middot; <a href="https://www.linkedin.com/in/markmeece/" target="_blank" rel="noopener">Connect on LinkedIn &rarr;</a></p>
+    </div>
+    <div class="stat">
+      <div class="big">~$1M <span class="arrow">&rarr;</span> ~$50M</div>
+      <div class="lbl">in under seven years &mdash; by winning the small things, one at a time</div>
+    </div>
   </div>
 </section>
 
