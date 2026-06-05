@@ -133,6 +133,23 @@
   .operator .byline b{color:var(--charcoal);font-weight:600;}
   .operator .byline a{color:var(--coral);font-weight:600;text-decoration:none;}
   .operator .byline a:hover{text-decoration:underline;}
+  /* two paths */
+  .paths2 .duo{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  @media(max-width:840px){.paths2 .duo{grid-template-columns:1fr;}}
+  .pcard{border-radius:20px;padding:36px 34px;display:flex;flex-direction:column;border:1px solid var(--line);background:var(--paper-2);transition:transform .15s ease,box-shadow .15s ease;}
+  .pcard:hover{transform:translateY(-3px);box-shadow:0 18px 40px -24px rgba(43,40,37,.3);}
+  .pcard.dark{background:var(--charcoal);color:#F4F2EE;border-color:var(--charcoal);}
+  .pcard .ptag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--coral);}
+  .pcard h3{font-size:clamp(22px,3vw,28px);font-weight:800;letter-spacing:-.02em;margin-top:10px;line-height:1.1;}
+  .pcard .pname{font-size:13.5px;font-weight:600;color:var(--coral);margin-top:4px;}
+  .pcard p{font-size:15px;margin-top:14px;color:var(--charcoal-soft);}
+  .pcard.dark p{color:#C9C4BB;}
+  .pcard .best{font-size:13.5px;margin-top:18px;padding:12px 16px;border-radius:10px;background:var(--paper);border:1px solid var(--line);color:var(--charcoal);}
+  .pcard.dark .best{background:#363229;border-color:#46413A;color:#F4F2EE;}
+  .pcard .go{margin-top:auto;padding-top:20px;font-weight:600;font-size:14.5px;color:var(--coral);}
+  .paths2 .shared{text-align:center;font-size:14px;color:var(--muted);margin-top:22px;}
+  .paths2 .shared b{color:var(--charcoal);font-weight:600;}
+
   /* the workshop */
   .workshop{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .workshop .grid{display:grid;grid-template-columns:1.25fr 1fr;gap:44px;align-items:start;}
@@ -175,7 +192,7 @@
     <div class="logo"><a href="#top"><img src="smallball-wordmark-charcoal.svg" alt="smallball"></a></div>
     <nav class="links">
       <a href="#what">What we do</a>
-      <a href="#how">How we work</a>
+      <a href="#paths">Two paths</a>
       <a href="#workshop">The Workshop</a>
       <a href="wins.html">The wins</a>
       <a href="#why">Why Smallball</a>
@@ -265,12 +282,40 @@
   </div>
 </section>
 
+<section class="paths2 block" id="paths">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="kick">Two ways to work with us</div>
+      <h2>We do it for you — or we do it with you.</h2>
+      <p>Same operator, same method, two different seats for you. Pick the one that fits how you like to run.</p>
+    </div>
+    <div class="duo">
+      <a class="pcard" href="#how">
+        <div class="ptag">Path one · We do it for you</div>
+        <h3>You run the business. We build the wins.</h3>
+        <p>Project-based. We find the small wins, fix the process, build the automation, test it, document it, and hand it off — done, working, and yours. You never have to touch the tools.</p>
+        <div class="best"><b>Best for:</b> owners who want it handled — the win delivered, not a new skill to learn.</div>
+        <div class="go">See the three steps &darr;</div>
+      </a>
+      <a class="pcard dark" href="#workshop">
+        <div class="ptag">Path two · We do it with you</div>
+        <h3>We build it together, side by side.</h3>
+        <div class="pname">The Workshop</div>
+        <p>Twice a month we get on a working call and build the next win together — so you understand every piece, and your team learns the skill, not just the system. Text access in between.</p>
+        <div class="best"><b>Best for:</b> owners who want to learn it as we go and build the muscle in-house.</div>
+        <div class="go">See the Workshop &darr;</div>
+      </a>
+    </div>
+    <div class="shared">Both paths start the same place: <b>the Walk-Through</b> — a ranked list of your small wins, no obligation either way.</div>
+  </div>
+</section>
+
 <section class="block" id="how">
   <div class="wrap">
     <div class="sec-head">
-      <div class="kick">How we work</div>
+      <div class="kick">Path one · We do it for you</div>
       <h2>Three steps. Start with one.</h2>
-      <p>The same method delivers the AI and the operations work — plain, low-risk, repeatable.</p>
+      <p>Project-based: we build it, test it, document it, and hand it off. The same method delivers the AI and the operations work — plain, low-risk, repeatable.</p>
     </div>
     <div class="steps">
       <div class="step">
@@ -301,7 +346,7 @@
 <section class="workshop block" id="workshop">
   <div class="wrap">
     <div class="sec-head">
-      <div class="kick">After the walk-through · ongoing</div>
+      <div class="kick">Path two · We do it with you</div>
       <h2>The Workshop. Keep winning — together, every two weeks.</h2>
       <p>Most AI help is a report you implement alone, or a black box you can't run when the consultant leaves. The Workshop is neither. Twice a month we get on a working call, fix the next small thing costing you time, and put AI on it — together, so you understand it and you own it.</p>
     </div>
