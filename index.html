@@ -182,9 +182,27 @@
   .pcard.dark p{color:#C9C4BB;}
   .pcard .best{font-size:13.5px;margin-top:18px;padding:12px 16px;border-radius:10px;background:var(--paper);border:1px solid var(--line);color:var(--charcoal);}
   .pcard.dark .best{background:#363229;border-color:#46413A;color:#F4F2EE;}
-  .pcard .go{margin-top:auto;padding-top:20px;font-weight:600;font-size:14.5px;color:var(--coral);}
+  .pcard .pprice{margin-top:auto;padding-top:18px;font-weight:700;font-size:15.5px;letter-spacing:-.01em;}
+  .pcard .go{padding-top:6px;font-weight:600;font-size:14.5px;color:var(--coral);}
   .paths2 .shared{text-align:center;font-size:14px;color:var(--muted);margin-top:22px;}
   .paths2 .shared b{color:var(--charcoal);font-weight:600;}
+
+  /* path one pricing */
+  .how2{display:grid;grid-template-columns:1.25fr 1fr;gap:44px;align-items:start;margin-top:34px;}
+  @media(max-width:840px){.how2{grid-template-columns:1fr;}}
+  .how2 .after h3{font-size:20px;font-weight:800;letter-spacing:-.015em;}
+  .how2 .after p{font-size:15px;color:var(--charcoal-soft);margin-top:12px;}
+  .how2 .after p b{color:var(--charcoal);font-weight:600;}
+  .pricecard{background:var(--charcoal);color:#F4F2EE;border-radius:20px;padding:32px 30px;}
+  .pricecard .big{font-size:44px;font-weight:800;letter-spacing:-.02em;line-height:1;}
+  .pricecard .big span{font-size:16px;font-weight:600;color:#C9C4BB;}
+  .pricecard .sub{font-size:13.5px;color:#C9C4BB;margin-top:8px;}
+  .pricecard ul{list-style:none;margin-top:16px;}
+  .pricecard li{font-size:14.5px;padding:9px 0 9px 24px;position:relative;border-bottom:1px solid #3A3631;}
+  .pricecard li:last-child{border-bottom:none;}
+  .pricecard li:before{content:"";position:absolute;left:0;top:16px;width:8px;height:8px;border-radius:50%;background:var(--coral);}
+  .pricecard .note{font-size:13px;color:#C9C4BB;margin-top:14px;}
+  .pricecard .btn{margin-top:18px;width:100%;justify-content:center;}
 
   /* the workshop */
   .workshop{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
@@ -331,6 +349,7 @@
         <h3>You run the business. We build the wins.</h3>
         <p>Project-based. We find the small wins, fix the process, build the automation, test it, document it, and hand it off — done, working, and yours. You never have to touch the tools.</p>
         <div class="best"><b>Best for:</b> owners who want it handled — the win delivered, not a new skill to learn.</div>
+        <div class="pprice">Project-based &middot; starts at $2,500</div>
         <div class="go">See the three steps &darr;</div>
       </a>
       <a class="pcard dark" href="#workshop">
@@ -339,6 +358,7 @@
         <div class="pname">The Workshop</div>
         <p>Twice a month we get on a working call and build the next win together — so you understand every piece, and your team learns the skill, not just the system. Text access in between.</p>
         <div class="best"><b>Best for:</b> owners who want to learn it as we go and build the muscle in-house.</div>
+        <div class="pprice">$1,500 / month &middot; month to month</div>
         <div class="go">See the Workshop &darr;</div>
       </a>
     </div>
@@ -374,6 +394,27 @@
         <div class="tag">Make it stick</div>
         <p>A win you can't repeat isn't a win. We document what we build and how your operation runs, so the improvement survives a busy week, a new hire, and your worst day. That's the part that compounds.</p>
         <div class="get"><b>You get:</b> clear, usable documentation — owned by name, built to outlast whoever's out sick.</div>
+      </div>
+    </div>
+    <div class="how2">
+      <div class="after">
+        <h3>What it costs — no mystery</h3>
+        <p>Every engagement starts with <b>the first win: $2,500 flat</b>, quoted up front, done in about three weeks. It's a real deliverable, not an assessment — you end up with a working automation and the full ranked list of what else is worth doing.</p>
+        <p>Every build after that comes off your ranked list and is <b>quoted before it starts</b>. Most single builds land between <b>$5K–$10K</b>; connected systems that tie several steps together typically run <b>$12K–$25K</b>.</p>
+        <p><b>No retainer, no lock-in.</b> Stop after any win and keep everything. And your $2,500 credits toward your next build if you keep going.</p>
+      </div>
+      <div class="pricecard">
+        <div class="big">$2,500<span> flat</span></div>
+        <div class="sub">Your first win &middot; about three weeks</div>
+        <ul>
+          <li>A ranked list of the small wins in your operation</li>
+          <li>Your first automation — built, tested, live</li>
+          <li>Your team trained, everything documented</li>
+          <li>You own all of it</li>
+          <li>Credited toward your next build</li>
+        </ul>
+        <div class="note">Flat price, quoted up front. If we're not a fit, you keep the list and the win.</div>
+        <a class="btn" href="#book" data-book>Book a walk-through</a>
       </div>
     </div>
   </div>
