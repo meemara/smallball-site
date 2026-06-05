@@ -133,6 +133,32 @@
   .operator .byline b{color:var(--charcoal);font-weight:600;}
   .operator .byline a{color:var(--coral);font-weight:600;text-decoration:none;}
   .operator .byline a:hover{text-decoration:underline;}
+  /* the workshop */
+  .workshop{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .workshop .grid{display:grid;grid-template-columns:1.25fr 1fr;gap:44px;align-items:start;}
+  @media(max-width:840px){.workshop .grid{grid-template-columns:1fr;}}
+  .workshop .rhythm{display:flex;flex-direction:column;gap:14px;}
+  .workshop .r{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 22px;}
+  .workshop .r .n{font-size:12px;font-weight:700;color:var(--coral);letter-spacing:.06em;}
+  .workshop .r h4{font-size:17px;font-weight:700;margin-top:5px;letter-spacing:-.01em;}
+  .workshop .r p{font-size:14px;color:var(--charcoal-soft);margin-top:7px;}
+  .workshop .method{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
+  .workshop .m{flex:1 1 130px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:13px 14px;}
+  .workshop .m.fix{border:1.5px solid var(--coral);}
+  .workshop .m .k{font-size:11px;font-weight:700;color:var(--coral);letter-spacing:.06em;}
+  .workshop .m h5{font-size:14px;font-weight:700;margin-top:3px;}
+  .workshop .m p{font-size:12.5px;color:var(--charcoal-soft);margin-top:4px;}
+  .workshop .price{background:var(--charcoal);color:#F4F2EE;border-radius:20px;padding:32px 30px;}
+  .workshop .price .big{font-size:44px;font-weight:800;letter-spacing:-.02em;line-height:1;}
+  .workshop .price .big span{font-size:16px;font-weight:600;color:#C9C4BB;}
+  .workshop .price .sub{font-size:13.5px;color:#C9C4BB;margin-top:8px;}
+  .workshop .price ul{list-style:none;margin-top:16px;}
+  .workshop .price li{font-size:14.5px;padding:9px 0 9px 24px;position:relative;border-bottom:1px solid #3A3631;}
+  .workshop .price li:last-child{border-bottom:none;}
+  .workshop .price li:before{content:"";position:absolute;left:0;top:16px;width:8px;height:8px;border-radius:50%;background:var(--coral);}
+  .workshop .price .note{font-size:13px;color:#C9C4BB;margin-top:14px;}
+  .workshop .price .btn{margin-top:18px;width:100%;justify-content:center;}
+
   footer{background:var(--charcoal);color:#C9C4BB;padding:62px 0 40px;}
   .foot{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap;}
   footer .logo img{height:30px;}
@@ -150,6 +176,8 @@
     <nav class="links">
       <a href="#what">What we do</a>
       <a href="#how">How we work</a>
+      <a href="#workshop">The Workshop</a>
+      <a href="wins.html">The wins</a>
       <a href="#why">Why Smallball</a>
       <a class="btn" href="#book" data-book>Book a walk-through</a>
     </nav>
@@ -265,6 +293,44 @@
         <div class="tag">Make it stick</div>
         <p>A win you can't repeat isn't a win. We document what we build and how your operation runs, so the improvement survives a busy week, a new hire, and your worst day. That's the part that compounds.</p>
         <div class="get"><b>You get:</b> clear, usable documentation — owned by name, built to outlast whoever's out sick.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="workshop block" id="workshop">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kick">After the walk-through · ongoing</div>
+      <h2>The Workshop. Keep winning — together, every two weeks.</h2>
+      <p>Most AI help is a report you implement alone, or a black box you can't run when the consultant leaves. The Workshop is neither. Twice a month we get on a working call, fix the next small thing costing you time, and put AI on it — together, so you understand it and you own it.</p>
+    </div>
+    <div class="grid">
+      <div>
+        <div class="rhythm">
+          <div class="r"><div class="n">01</div><h4>Two working sessions a month</h4><p>45 minutes, every two weeks. Screen-shared and hands-on — not status calls. We ship at least one real win every session.</p></div>
+          <div class="r"><div class="n">02</div><h4>Text me between sessions</h4><p>Stuck on something? You don't wait two weeks. Direct text access, answers within one business day.</p></div>
+          <div class="r"><div class="n">03</div><h4>Everything documented</h4><p>Recordings, takeaways, action items, and a running list of every win we've shipped — in one place you can see.</p></div>
+        </div>
+        <div class="method">
+          <div class="m"><div class="k">WALK</div><h5>Find the win</h5><p>The next small, repeatable thing eating your time.</p></div>
+          <div class="m fix"><div class="k">FIX</div><h5>Fix the process first</h5><p>The step most AI consultants skip.</p></div>
+          <div class="m"><div class="k">BUILD</div><h5>Put AI on it</h5><p>Built on the call, tested, working.</p></div>
+          <div class="m"><div class="k">STICK</div><h5>Make it last</h5><p>Documented so it survives a busy week.</p></div>
+        </div>
+      </div>
+      <div class="price">
+        <div class="big">$1,500<span> / month</span></div>
+        <div class="sub">Month to month. No long contract.</div>
+        <ul>
+          <li>Two 45-minute live working sessions</li>
+          <li>Unlimited text access between sessions</li>
+          <li>At least one win shipped per session</li>
+          <li>Your documented hub, kept current</li>
+          <li>You own everything we build</li>
+        </ul>
+        <div class="note">Limited to six clients at a time. Begins after your Walk-Through.</div>
+        <a class="btn" href="#book" data-book>Start with a walk-through</a>
       </div>
     </div>
   </div>
