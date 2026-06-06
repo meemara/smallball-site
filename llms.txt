@@ -28,4 +28,6 @@ Key facts:
 - [Meetings that file themselves](https://www.smallball.consulting/meetings-that-file-themselves.html)
 - [The receipt chase, automated](https://www.smallball.consulting/receipt-chase-automated.html)
 - [AI that reads the blueprints](https://www.smallball.consulting/ai-that-reads-the-blueprints.html)
+- [Answers without the hold](https://www.smallball.consulting/answers-without-the-hold.html): a searchable knowledge tool built from manufacturers' published documentation, giving field techs an instant sourced answer instead of waiting on a manufacturer help line
+- [The system that watches the systems](https://www.smallball.consulting/the-system-that-watches-the-systems.html): a monitor that checks every automation's heartbeat and emails one diagnostic only when something actually breaks
 - [A company brain you can ask questions](https://www.smallball.consulting/company-brain.html)
