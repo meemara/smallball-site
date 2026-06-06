@@ -64,6 +64,17 @@
   .libband .l p{font-size:14.5px;color:#C9C4BB;margin-top:8px;max-width:54ch;}
   .libband a.btn2{background:var(--coral);color:#fff;font-weight:600;font-size:15px;padding:14px 24px;border-radius:999px;white-space:nowrap;}
   .libband a.btn2:hover{background:var(--coral-deep);}
+  .liblist{padding:10px 0 20px;}
+  .liblist .lhead{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--coral);margin-bottom:6px;}
+  .liblist h2{font-size:clamp(22px,3vw,30px);font-weight:800;letter-spacing:-.02em;}
+  .liblist p{font-size:15.5px;color:var(--charcoal-soft);margin-top:10px;max-width:62ch;}
+  .liblist .ll{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:24px;}
+  @media(max-width:760px){.liblist .ll{grid-template-columns:1fr;}}
+  .liblist a.li{display:flex;align-items:center;gap:12px;background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:15px 18px;font-size:15px;font-weight:600;color:var(--charcoal);transition:border-color .15s ease,transform .15s ease;}
+  .liblist a.li:hover{border-color:var(--coral);transform:translateY(-2px);}
+  .liblist a.li .d{flex:0 0 auto;width:9px;height:9px;border-radius:50%;background:var(--coral);}
+  .liblist a.li.feature{background:var(--charcoal);color:#F4F2EE;border-color:var(--charcoal);grid-column:1 / -1;}
+  .liblist a.li .ar{margin-left:auto;color:var(--coral);font-weight:700;}
 
   .rules{background:var(--charcoal);color:#F4F2EE;padding:66px 0;}
   .rules h2{font-size:clamp(24px,3.4vw,34px);font-weight:800;letter-spacing:-.02em;max-width:24ch;}
@@ -182,6 +193,25 @@
       <p>Real systems, real before-and-after numbers — and when you stack them up, they give my companies back about 30 hours a week. Here's the math, page by page.</p>
     </div>
     <a class="btn2" href="the-math.html">See the math &rarr;</a>
+  </div>
+</section>
+
+<section class="wrap liblist">
+  <div class="lhead">The full library</div>
+  <h2>Every system, one page each.</h2>
+  <p>Real automations running in the businesses I operate — each written up plain, with honest before-and-after numbers. Read any of them:</p>
+  <div class="ll">
+    <a class="li feature" href="the-math.html"><span class="d"></span>The math — what they all add up to <span class="ar">&rarr;</span></a>
+    <a class="li" href="reports-that-build-themselves.html"><span class="d"></span>The reports that build themselves</a>
+    <a class="li" href="payroll-sunday-retired.html"><span class="d"></span>Payroll Sunday, retired</a>
+    <a class="li" href="knowing-when-you-get-paid.html"><span class="d"></span>Knowing the minute you get paid</a>
+    <a class="li" href="inbox-that-flags-what-needs-you.html"><span class="d"></span>An inbox that flags what needs you</a>
+    <a class="li" href="pto-without-the-email-chain.html"><span class="d"></span>PTO without the email chain</a>
+    <a class="li" href="wheres-my-order.html"><span class="d"></span>&ldquo;Where&rsquo;s my order?&rdquo; answered first</a>
+    <a class="li" href="meetings-that-file-themselves.html"><span class="d"></span>Meetings that file themselves</a>
+    <a class="li" href="receipt-chase-automated.html"><span class="d"></span>The receipt chase, automated</a>
+    <a class="li" href="ai-that-reads-the-blueprints.html"><span class="d"></span>AI that reads the blueprints</a>
+    <a class="li" href="company-brain.html"><span class="d"></span>A company brain you can ask</a>
   </div>
 </section>
 
