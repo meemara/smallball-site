@@ -1,6 +1,6 @@
 # Smallball (Smallball Consulting)
 
-> Practical AI and process consulting for small businesses — based in Bozeman, Montana, serving small businesses anywhere (remote). Founded by Mark Meece, an operator who scaled a business from about $1M to roughly $50M in under seven years. The opposite of a big AI transformation: small, practical AI wins, proven one at a time, documented so they stick, compounding from there. Brand line: "Win the little things."
+> Practical AI and process consulting for small businesses — based in Bozeman, Montana, serving small businesses anywhere (remote). Founded by Mark Meece, an operator who scaled a business from about $4M to roughly $50M in under seven years. The opposite of a big AI transformation: small, practical AI wins, proven one at a time, documented so they stick, compounding from there. Brand line: "Win the little things."
 
 Key facts:
 - Founder: Mark Meece — operator background (COO of Evolution AVA; CEO & owner of Granite Mountain Countertops), not a pure technologist
