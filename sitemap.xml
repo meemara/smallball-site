@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.smallball.consulting/</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.smallball.consulting/wins.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <url><loc>https://www.smallball.consulting/</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.smallball.consulting/wins.html</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.smallball.consulting/library/the-math.html</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.smallball.consulting/library/reports-that-build-themselves.html</loc><lastmod>2026-06-05</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.smallball.consulting/library/payroll-sunday-retired.html</loc><lastmod>2026-06-05</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.smallball.consulting/library/knowing-when-you-get-paid.html</loc><lastmod>2026-06-05</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.smallball.consulting/library/inbox-that-flags-what-needs-you.html</loc><lastmod>2026-06-05</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.smallball.consulting/library/pto-without-the-email-chain.html</loc><lastmod>2026-06-05</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.smallball.consulting/library/wheres-my-order.html</loc><lastmod>2026-06-05</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.smallball.consulting/library/meetings-that-file-themselves.html</loc><lastmod>2026-06-05</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.smallball.consulting/library/receipt-chase-automated.html</loc><lastmod>2026-06-05</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.smallball.consulting/library/ai-that-reads-the-blueprints.html</loc><lastmod>2026-06-05</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.smallball.consulting/library/company-brain.html</loc><lastmod>2026-06-05</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 </urlset>
