@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The receipt chase, automated — Smallball</title>
+<meta name="description" content="The receipt chase, automated — a small, real automation running in the founder's own operation. Part of the Smallball wins library.">
+<link rel="icon" type="image/svg+xml" href="../smallball-monogram-icon.svg">
+<meta property="og:title" content="The receipt chase, automated — Smallball">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.smallball.consulting/library/receipt-chase-automated.html">
+<meta property="og:image" content="https://www.smallball.consulting/og-image.png">
+<link rel="canonical" href="https://www.smallball.consulting/library/receipt-chase-automated.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--coral:#E8502E;--coral-deep:#CB3F20;--charcoal:#2B2825;--charcoal-soft:#4A4641;--paper:#F7F5F1;--paper-2:#FFFFFF;--line:#E7E2DA;--muted:#8E8980;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Poppins',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--paper);color:var(--charcoal);-webkit-font-smoothing:antialiased;line-height:1.65;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 28px;}
+  .btn{display:inline-flex;align-items:center;gap:.55em;background:var(--coral);color:#fff;font-weight:600;font-size:15px;padding:14px 26px;border-radius:999px;border:none;cursor:pointer;}
+  .btn:hover{background:var(--coral-deep);}
+  .draftbar{background:#B3261E;color:#fff;text-align:center;font-size:13px;font-weight:600;padding:9px 16px;letter-spacing:.03em;}
+  header{position:sticky;top:0;z-index:50;background:rgba(247,245,241,.82);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1080px;margin:0 auto;padding:0 28px;}
+  .nav .logo img{height:26px;display:block;}
+  .nav .links{display:flex;align-items:center;gap:30px;}
+  .nav .links a{font-size:14.5px;font-weight:500;color:var(--charcoal-soft);}
+  .nav .links a:hover{color:var(--charcoal);}
+  @media(max-width:760px){.nav .links a:not(.btn){display:none;}}
+  article{padding:64px 0 30px;}
+  .kick{display:inline-block;font-size:12.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;color:var(--coral);margin-bottom:16px;}
+  h1{font-size:clamp(32px,5vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.07;}
+  h1 .dot{color:var(--coral);}
+  .lead{font-size:18px;color:var(--charcoal-soft);margin-top:18px;font-weight:500;}
+  h2{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--charcoal);margin:42px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--line);}
+  article p{font-size:16px;color:var(--charcoal-soft);margin-top:14px;}
+  article p b{color:var(--charcoal);font-weight:600;}
+  .runs{background:var(--paper-2);border:1px solid var(--line);border-radius:16px;padding:10px 24px;margin-top:16px;}
+  .runs li{list-style:none;font-size:15px;color:var(--charcoal-soft);padding:13px 0 13px 26px;position:relative;border-bottom:1px solid var(--line);}
+  .runs li:last-child{border-bottom:none;}
+  .runs li:before{content:"";position:absolute;left:0;top:21px;width:8px;height:8px;border-radius:50%;background:var(--coral);}
+  .runs li b{color:var(--charcoal);font-weight:600;}
+  .nums{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
+  .nums .chip{font-size:13.5px;font-weight:600;color:var(--charcoal);background:var(--paper-2);border:1px solid var(--line);border-radius:999px;padding:9px 16px;line-height:1.45;}
+  .honest{margin-top:16px;background:var(--paper-2);border:1px solid var(--line);border-left:4px solid var(--coral);border-radius:0 12px 12px 0;padding:18px 22px;font-size:15px;color:var(--charcoal-soft);}
+  mark.v{background:#FBEAE4;color:#B3261E;border:1px dashed var(--coral);border-radius:6px;padding:1px 7px;font-weight:600;font-size:.92em;}
+  .cta{margin:48px 0 0;background:var(--charcoal);border-radius:18px;padding:30px 30px;color:#F4F2EE;}
+  .cta b{font-size:18px;font-weight:700;display:block;}
+  .cta p{font-size:14px;color:#C9C4BB;margin-top:8px;}
+  .cta .btn{margin-top:18px;}
+  .vary{font-size:12.5px;color:var(--muted);margin:26px 0 60px;}
+  footer{background:var(--charcoal);color:#C9C4BB;padding:50px 0 36px;}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;max-width:1080px;margin:0 auto;padding:0 28px;}
+  footer .logo img{height:26px;}
+  footer .small{font-size:12.5px;color:#7C776E;}
+</style>
+</head>
+<body>
+
+
+<header>
+  <div class="nav">
+    <div class="logo"><a href="../index.html"><img src="../smallball-wordmark-charcoal.svg" alt="smallball"></a></div>
+    <nav class="links">
+      <a href="../index.html#what">What we do</a>
+      <a href="../index.html#paths">Two paths</a>
+      <a href="../wins.html">The wins</a>
+      <a class="btn" href="#book" data-book>Book a walk-through</a>
+    </nav>
+  </div>
+</header>
+
+<article>
+  <div class="wrap">
+    <span class="kick">From the home-technology company I help run · expenses</span>
+    <h1>The receipt chase, automated<span class="dot">.</span></h1>
+    <p class="lead">Company-card reconciliation is a monthly scavenger hunt: a statement full of charges and a dozen people who swear they'll send the receipt.</p>
+
+    <h2>The problem</h2>
+    <p>Whoever owns reconciliation inherits the worst recurring chore in the building. Between chasing receipts through the month and the end-of-month crunch, it was easily 10 hours a week — and at month-end it could swallow a full week of one person's time, parsing the statement, hunting receipts, nagging cardholders, and assembling something the books could absorb.</p>
+
+    <h2>What runs</h2>
+    <p>The pipeline now:</p>
+    <ul class="runs">
+      <li>Statements get <b>parsed automatically</b> when they arrive.</li>
+      <li>Receipts get <b>matched from email</b> without a human digging.</li>
+      <li>The people missing receipts get asked automatically — and <b>re-asked every Monday</b> until they cough it up. The machine never gets tired of nagging, and nobody resents a robot.</li>
+      <li>What lands on the bookkeeper's desk is a <b>reconciliation digest</b>, not a shoebox.</li>
+    </ul>
+
+    <h2>The numbers</h2>
+    <div class="nums">
+      <span class="chip">~10 hours a week of chasing, gone</span>
+      <span class="chip">Month-end no longer eats a person's whole week</span>
+      <span class="chip">The follow-up never forgets</span>
+    </div>
+
+    <h2>The honest part</h2>
+    <div class="honest">Approving expenses stayed a human call. What got automated is the chasing — the part that burned hours and goodwill. That split (machine does the when, humans keep the judgment) is the rule we build everything by.</div>
+
+    <div class="cta" id="book">
+      <b>This runs in my own operation today.</b>
+      <p>Not a brochure case study — a system I depend on. If you've got a version of this problem in your business, the Walk-Through finds it: a ranked list of the small wins sitting in your operation, no obligation to build any of it.</p>
+      <a class="btn" href="#book" data-book>Book a walk-through &rarr;</a>
+    </div>
+
+    <p class="vary">Your business is different — what's on this page is what happened in mine, not a promise about yours. That's exactly what the Walk-Through is for.</p>
+  </div>
+</article>
+
+<footer>
+  <div class="foot">
+    <div class="logo"><a href="../index.html"><img src="../smallball-wordmark-reversed.svg" alt="smallball"></a></div>
+    <div class="small">&copy; 2026 Smallball &middot; Bozeman, Montana &middot; Win the little things.</div>
+  </div>
+</footer>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script>
+  var BOOKING_URL = "https://outlook.office.com/book/smallball1@smallball.consulting/";
+  if (BOOKING_URL) {
+    document.querySelectorAll('[data-book]').forEach(function(a){
+      a.setAttribute('href', BOOKING_URL);
+      a.setAttribute('target','_blank');
+      a.setAttribute('rel','noopener');
+    });
+  }
+</script>
+</body>
+</html>
