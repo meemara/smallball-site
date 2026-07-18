@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Small Win — Free AI Advisor for Small Business | Smallball</title>
+<meta name="description" content="A free three-minute conversation that finds the one small, repeatable thing costing your business the most time — and tells you honestly whether the fix is AI, automation, or just a better process. No email required.">
+<link rel="icon" type="image/svg+xml" href="smallball-monogram-icon.svg">
+<meta property="og:title" content="Find your small win — free AI advisor | Smallball">
+<meta property="og:description" content="Three minutes, no email. Find the one small thing costing you the most time.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.smallball.consulting/advisor.html">
+<meta property="og:image" content="https://www.smallball.consulting/og-image.png">
+<link rel="canonical" href="https://www.smallball.consulting/advisor.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --coral:#E8502E;--coral-deep:#CB3F20;
+    --charcoal:#2B2825;--charcoal-soft:#4A4641;
+    --paper:#F7F5F1;--paper-2:#FFFFFF;
+    --line:#E7E2DA;--muted:#8E8980;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;}
+  body{font-family:'Poppins',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--paper);color:var(--charcoal);-webkit-font-smoothing:antialiased;line-height:1.6;display:flex;flex-direction:column;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px;width:100%;}
+  .btn{display:inline-flex;align-items:center;gap:.5em;background:var(--coral);color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:999px;transition:background .15s ease;border:none;cursor:pointer;}
+  .btn:hover{background:var(--coral-deep);}
+  .btn.ghost{background:transparent;color:var(--charcoal);border:1.5px solid var(--line);}
+  .btn.ghost:hover{background:#fff;border-color:var(--charcoal);}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(247,245,241,.9);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1080px;margin:0 auto;padding:0 24px;}
+  .nav .logo img{height:24px;display:block;}
+  .nav .right{display:flex;align-items:center;gap:18px;}
+  .nav .right a.plain{font-size:14px;font-weight:500;color:var(--charcoal-soft);}
+  .nav .right a.plain:hover{color:var(--charcoal);}
+  @media(max-width:560px){.nav .right a.plain{display:none;}}
+
+  .intro{padding:26px 0 6px;text-align:center;}
+  .intro h1{font-size:clamp(24px,4.5vw,34px);font-weight:800;letter-spacing:-.025em;line-height:1.1;}
+  .intro h1 span{color:var(--coral);}
+  .intro p{font-size:14px;color:var(--muted);margin-top:8px;}
+
+  main{flex:1;display:flex;flex-direction:column;width:100%;}
+  #chat{flex:1;overflow-y:auto;padding:22px 0 12px;}
+  .msg{display:flex;margin:0 0 16px;}
+  .msg .bubble{max-width:85%;padding:14px 18px;border-radius:18px;font-size:15px;line-height:1.55;white-space:pre-wrap;word-wrap:break-word;}
+  .msg.bot{justify-content:flex-start;}
+  .msg.bot .bubble{background:var(--paper-2);border:1px solid var(--line);border-bottom-left-radius:6px;color:var(--charcoal);}
+  .msg.user{justify-content:flex-end;}
+  .msg.user .bubble{background:var(--charcoal);color:#F4F2EE;border-bottom-right-radius:6px;}
+  .msg .bubble a{color:var(--coral);font-weight:600;text-decoration:underline;}
+  .dot-row{display:inline-flex;gap:5px;align-items:center;padding:6px 2px;}
+  .dot-row i{width:7px;height:7px;border-radius:50%;background:var(--muted);animation:blink 1.2s infinite;}
+  .dot-row i:nth-child(2){animation-delay:.2s;}
+  .dot-row i:nth-child(3){animation-delay:.4s;}
+  @keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+
+  .ctabar{display:none;justify-content:center;gap:10px;flex-wrap:wrap;padding:4px 0 12px;}
+  .ctabar.show{display:flex;}
+  .ctabar .note{font-size:13px;color:var(--muted);align-self:center;}
+
+  .inputbar{position:sticky;bottom:0;background:linear-gradient(to top,var(--paper) 75%,rgba(247,245,241,0));padding:8px 0 18px;}
+  .inputrow{display:flex;gap:10px;align-items:flex-end;}
+  #box{flex:1;resize:none;border:1px solid var(--line);border-radius:22px;background:#fff;font-family:inherit;font-size:15px;color:var(--charcoal);padding:13px 18px;outline:none;max-height:140px;line-height:1.45;}
+  #box:focus{border-color:var(--charcoal-soft);}
+  .iconbtn{flex:0 0 auto;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--charcoal-soft);transition:all .15s ease;}
+  .iconbtn:hover{border-color:var(--charcoal);color:var(--charcoal);}
+  .iconbtn.send{background:var(--coral);border-color:var(--coral);color:#fff;}
+  .iconbtn.send:hover{background:var(--coral-deep);}
+  .iconbtn.send:disabled{opacity:.45;cursor:default;}
+  .iconbtn.mic.listening{background:var(--coral);border-color:var(--coral);color:#fff;animation:pulse 1.4s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(232,80,46,.4)}70%{box-shadow:0 0 0 12px rgba(232,80,46,0)}100%{box-shadow:0 0 0 0 rgba(232,80,46,0)}}
+  .iconbtn svg{width:20px;height:20px;}
+  .finePrint{text-align:center;font-size:12px;color:var(--muted);margin-top:9px;}
+  .finePrint a{color:var(--charcoal-soft);text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo"><a href="index.html"><img src="smallball-wordmark-charcoal.svg" alt="smallball"></a></div>
+    <div class="right">
+      <a class="plain" href="wins.html">The wins</a>
+      <a class="btn" href="https://outlook.office.com/book/smallball1@smallball.consulting/" target="_blank" rel="noopener">Book a walk-through</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap intro">
+  <h1>Find your small win<span>.</span></h1>
+  <p>Three minutes, give or take. No email required.</p>
+</div>
+
+<main class="wrap">
+  <div id="chat" aria-live="polite"></div>
+
+  <div class="ctabar" id="ctabar">
+    <a class="btn" href="https://outlook.office.com/book/smallball1@smallball.consulting/" target="_blank" rel="noopener">Book a walk-through</a>
+    <a class="btn ghost" href="index.html#book">Leave Mark a note</a>
+  </div>
+
+  <div class="inputbar">
+    <div class="inputrow">
+      <button class="iconbtn mic" id="mic" title="Tap and talk" aria-label="Speak instead of typing" style="display:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+      </button>
+      <textarea id="box" rows="1" placeholder="Type here — or tap the mic and just talk…" aria-label="Your message"></textarea>
+      <button class="iconbtn send" id="send" title="Send" aria-label="Send">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+    <div class="finePrint">An AI advisor — the machine does the finding, <a href="index.html#operator">Mark</a> does the building. No sign-up, no email captured, nothing sold to you mid-chat.</div>
+  </div>
+</main>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script>
+(function(){
+  var chat = document.getElementById('chat');
+  var box = document.getElementById('box');
+  var send = document.getElementById('send');
+  var micBtn = document.getElementById('mic');
+  var ctabar = document.getElementById('ctabar');
+  var messages = [];      // {role, content} — what we send to the API
+  var busy = false;
+  var botReplies = 0;
+
+  var INTRO = "Somewhere in your business there's a small, repeatable thing quietly eating your hours. I'm here to help you find the biggest one — and I'll tell you honestly whether the fix is AI, an automation, or just a better process.\n\nTo start: what does your business do, and who's it for?";
+
+  function linkify(text){
+    var safe = text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    return safe.replace(/(https?:\/\/[^\s)]+)/g, function(u){
+      var label = u.indexOf('outlook.office.com') > -1 ? 'Book a walk-through' :
+                  u.indexOf('#book') > -1 ? 'Leave Mark a note' :
+                  u.indexOf('the-math') > -1 ? 'the math' : u.replace(/^https?:\/\/(www\.)?/,'');
+      return '<a href="'+u+'" target="_blank" rel="noopener">'+label+'</a>';
+    });
+  }
+
+  function addBubble(role, text){
+    var m = document.createElement('div');
+    m.className = 'msg ' + (role === 'user' ? 'user' : 'bot');
+    var b = document.createElement('div');
+    b.className = 'bubble';
+    b.innerHTML = linkify(text);
+    m.appendChild(b);
+    chat.appendChild(m);
+    chat.scrollTop = chat.scrollHeight;
+    return m;
+  }
+
+  function addTyping(){
+    var m = document.createElement('div');
+    m.className = 'msg bot';
+    m.innerHTML = '<div class="bubble"><span class="dot-row"><i></i><i></i><i></i></span></div>';
+    chat.appendChild(m);
+    chat.scrollTop = chat.scrollHeight;
+    return m;
+  }
+
+  function autosize(){
+    box.style.height = 'auto';
+    box.style.height = Math.min(box.scrollHeight, 140) + 'px';
+  }
+  box.addEventListener('input', autosize);
+
+  function sendMessage(){
+    var text = box.value.trim();
+    if (!text || busy) return;
+    if (messages.length >= 28){
+      addBubble('bot', "We've covered a lot of ground — more than a chat window should carry. Take the next step when you're ready: https://outlook.office.com/book/smallball1@smallball.consulting/ — or leave a note at https://www.smallball.consulting/#book and Mark will reply personally.");
+      showCtas();
+      return;
+    }
+    busy = true; send.disabled = true;
+    box.value = ''; autosize();
+    addBubble('user', text);
+    messages.push({role:'user', content:text});
+    var typing = addTyping();
+
+    fetch('/api/advisor', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({messages: messages})
+    }).then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; }); })
+      .then(function(out){
+        typing.remove();
+        if (out.ok && out.j.reply){
+          messages.push({role:'assistant', content:out.j.reply});
+          addBubble('bot', out.j.reply);
+          botReplies++;
+          if (botReplies >= 2) showCtas();
+        } else {
+          addBubble('bot', (out.j && out.j.error) || "The advisor hit a snag. Give it a second and try again.");
+          messages.pop(); // let them resend
+        }
+      })
+      .catch(function(){
+        typing.remove();
+        addBubble('bot', "Couldn't reach the advisor just now. Check your connection and try again — or skip the chat and book a walk-through: https://outlook.office.com/book/smallball1@smallball.consulting/");
+        messages.pop();
+      })
+      .finally(function(){ busy = false; send.disabled = false; box.focus(); });
+  }
+
+  function showCtas(){ ctabar.classList.add('show'); }
+
+  send.addEventListener('click', sendMessage);
+  box.addEventListener('keydown', function(e){
+    if (e.key === 'Enter' && !e.shiftKey){ e.preventDefault(); sendMessage(); }
+  });
+
+  // Voice input — Web Speech API where available (Chrome, Edge, Safari)
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (SR){
+    micBtn.style.display = 'flex';
+    var rec = new SR();
+    rec.lang = 'en-US'; rec.interimResults = true; rec.continuous = false;
+    var listening = false;
+    micBtn.addEventListener('click', function(){
+      if (listening){ rec.stop(); return; }
+      try { rec.start(); } catch(e){}
+    });
+    rec.onstart = function(){ listening = true; micBtn.classList.add('listening'); };
+    rec.onend = function(){ listening = false; micBtn.classList.remove('listening'); autosize(); };
+    rec.onerror = function(){ listening = false; micBtn.classList.remove('listening'); };
+    rec.onresult = function(ev){
+      var t = '';
+      for (var i = 0; i < ev.results.length; i++){ t += ev.results[i][0].transcript; }
+      box.value = t; autosize();
+    };
+  }
+
+  addBubble('bot', INTRO);
+  messages.push({role:'assistant', content:INTRO});
+  box.focus();
+})();
+</script>
+</body>
+</html>

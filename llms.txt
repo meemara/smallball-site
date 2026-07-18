@@ -15,6 +15,7 @@ Key facts:
 
 ## Pages
 - [Home](https://www.smallball.consulting/): positioning, the Merriam-Webster "small ball" definition, the two paths, the method, founder credibility
+- [Find your win (AI advisor)](https://www.smallball.consulting/advisor.html): a free three-minute AI conversation that finds the one small, repeatable thing costing a business the most time — honest about whether the fix is AI, automation, or just a better process; no email required
 - [The wins](https://www.smallball.consulting/wins.html): the eight small wins built most often, with honest sourced numbers and a results-vary disclaimer
 
 ## Wins library (real automations the founder runs in his own businesses)
