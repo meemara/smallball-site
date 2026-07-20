@@ -42,6 +42,59 @@ function bad(res, code, msg) {
   res.status(code).json({ error: msg });
 }
 
+// Best-effort notification to Mark via Microsoft Graph (Smallball mail app).
+// Fires on conversation start (1st user message) and depth (8th user message).
+// No conversation content is included. Failures are logged and never block the chat.
+async function notifyMark(kind, userMsgCount) {
+  const tenant = process.env.SB_MAIL_TENANT;
+  const clientId = process.env.SB_MAIL_CLIENT_ID;
+  const secret = process.env.SB_MAIL_CLIENT_SECRET;
+  const sender = process.env.SB_MAIL_SENDER;
+  const to = process.env.SB_MAIL_NOTIFY_TO || "mark@smallball.consulting";
+  if (!tenant || !clientId || !secret || !sender) return; // notifications not configured
+
+  try {
+    const tokenRes = await fetch(`https://login.microsoftonline.com/${tenant}/oauth2/v2.0/token`, {
+      method: "POST",
+      headers: { "content-type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        client_id: clientId,
+        client_secret: secret,
+        scope: "https://graph.microsoft.com/.default",
+        grant_type: "client_credentials",
+      }),
+    });
+    if (!tokenRes.ok) throw new Error("token " + tokenRes.status);
+    const { access_token } = await tokenRes.json();
+
+    const now = new Date().toLocaleString("en-US", { timeZone: "America/Denver", dateStyle: "medium", timeStyle: "short" });
+    const subject = kind === "start" ? "Advisor: new conversation" : "Advisor: conversation went deep (8+ exchanges)";
+    const line = kind === "start"
+      ? "A visitor just started a conversation with the site advisor."
+      : "A visitor is " + userMsgCount + " exchanges into an advisor conversation - somebody is engaged.";
+    const html = '<div style="font-family:Arial,sans-serif;color:#2B2825;font-size:14px;line-height:1.5;">'
+      + '<p style="margin:0 0 10px;">' + line + "</p>"
+      + '<p style="margin:0 0 10px;color:#6D6E71;">' + now + " MT &middot; smallball.consulting/advisor</p>"
+      + '<p style="margin:0;color:#6D6E71;font-size:12px;">No content or identity is captured - this is just the pulse.</p></div>';
+
+    const sendRes = await fetch(`https://graph.microsoft.com/v1.0/users/${encodeURIComponent(sender)}/sendMail`, {
+      method: "POST",
+      headers: { "content-type": "application/json", authorization: "Bearer " + access_token },
+      body: JSON.stringify({
+        message: {
+          subject,
+          body: { contentType: "HTML", content: html },
+          toRecipients: [{ emailAddress: { address: to } }],
+        },
+        saveToSentItems: false,
+      }),
+    });
+    if (!sendRes.ok) throw new Error("sendMail " + sendRes.status);
+  } catch (e) {
+    console.error("advisor notify failed:", e && e.message);
+  }
+}
+
 module.exports = async (req, res) => {
   // Same-site soft guard + CORS for the site itself (+ Vercel preview deploys)
   const origin = req.headers.origin || "";
@@ -83,6 +136,12 @@ module.exports = async (req, res) => {
   if (total > MAX_TOTAL_CHARS) return bad(res, 400, "conversation_limit");
   if (messages[messages.length - 1].role !== "user") return bad(res, 400, "last message must be user");
 
+  // Kick off the notification in parallel with the model call (adds no latency).
+  const userMsgCount = messages.filter((m) => m.role === "user").length;
+  let notifyP = Promise.resolve();
+  if (userMsgCount === 1) notifyP = notifyMark("start", userMsgCount);
+  else if (userMsgCount === 8) notifyP = notifyMark("deep", userMsgCount);
+
   try {
     const r = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
@@ -110,9 +169,11 @@ module.exports = async (req, res) => {
       .join("\n")
       .trim();
     if (!reply) return bad(res, 502, "The advisor hit a snag. Give it a second and try again.");
+    await notifyP; // ensure the notification finishes before the function freezes (never throws)
     return res.status(200).json({ reply });
   } catch (e) {
     console.error("advisor error", e && e.message);
+    await notifyP;
     return bad(res, 502, "The advisor hit a snag. Give it a second and try again.");
   }
 };
