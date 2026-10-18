@@ -1,8 +1,10 @@
 // Smallball Site Advisor — serverless chat endpoint (Vercel)
 // POST /api/advisor  { messages: [{role:"user"|"assistant", content:"..."}] }  ->  { reply: "..." }
 // Requires env var ANTHROPIC_API_KEY (set in Vercel project settings).
+// Optional env var SMALLBALL_ADVISOR_MODEL picks the model (see ai-models.json).
 
-const MODEL = "claude-sonnet-5";
+// Change the model here only: env SMALLBALL_ADVISOR_MODEL (the default is what runs today).
+const MODEL = process.env.SMALLBALL_ADVISOR_MODEL || "claude-sonnet-5";
 const MAX_MESSAGES = 30;        // hard cap on conversation length (server-enforced)
 const MAX_MSG_CHARS = 2000;     // per message
 const MAX_TOTAL_CHARS = 30000;  // whole conversation

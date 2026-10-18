@@ -1,0 +1,9 @@
+[
+  {
+    "tool": "Smallball Site Advisor",
+    "provider": "anthropic",
+    "envVar": "SMALLBALL_ADVISOR_MODEL",
+    "default": "claude-sonnet-5",
+    "what": "Chat advisor on smallball.consulting, api/advisor.js (Vercel function)"
+  }
+]
